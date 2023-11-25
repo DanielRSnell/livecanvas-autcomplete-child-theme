@@ -2,13 +2,13 @@
 var lc_html_editor = ace.edit("lc-html-editor");
 
 // Initialize the suggestions array with Tailwind CSS classes
-var tailwindClasses = suggestions;
+var smartClasses = suggestions;
 
 // Create a custom Ace Editor completer for the autocomplete suggestions
-var tailwindCompleter = {
+var smartCompleter = {
   getCompletions: function (editor, session, pos, prefix, callback) {
     // Filter the autocomplete suggestions based on the prefix
-    var completions = tailwindClasses
+    var completions = smartClasses
       .filter((item) => {
         // Modification to search params or payload client side
         return item.caption.startsWith(prefix)
@@ -27,7 +27,7 @@ var tailwindCompleter = {
 };
 
 // Add the Tailwind CSS completer to the Ace Editor instance
-lc_html_editor.completers = [tailwindCompleter];
+lc_html_editor.completers = [smartCompleter];
 
 // Configure other Ace Editor options as needed
 lc_html_editor.setOptions({
