@@ -19,8 +19,9 @@
 
 */
 
-
+// Picostrap Extensions
 require_once get_stylesheet_directory() . '/includes/extensions/controller.php';
+
 
 // DE-ENQUEUE PARENT THEME BOOTSTRAP JS BUNDLE
 add_action( 'wp_print_scripts', function(){

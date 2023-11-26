@@ -16,7 +16,7 @@ $extensions = [
         'file' => 'autocomplete/autocomplete.php',
         'status' => true
     ],
-    'timber' => [
+    'timber' => [ // make sure to run composer install in the theme directory to install Timber
         'file' => 'timber/timber.php',
         'status' => false
     ]
