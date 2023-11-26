@@ -1,0 +1,25 @@
+# Ignore compiled assets
+/dist/
+
+# Ignore cache and temporary files
+*.log
+*.bak
+*.tmp
+
+# Ignore development and build files
+node_modules/
+vendor/
+Gruntfile.js
+gulpfile.js
+package-lock.json
+composer.lock
+
+# Ignore IDE and editor files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Ignore miscellaneous files
+.DS_Store
+Thumbs.db
