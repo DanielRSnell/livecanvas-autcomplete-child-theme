@@ -9,12 +9,32 @@ $extend_autocomplete = [
             'file' => '/includes/extensions/autocomplete/helpers/clean_sort.php',
             'status' => true
         ],
+        'get_file' => [
+            'file' => '/includes/extensions/autocomplete/helpers/get_file.php',
+            'status' => true
+        ],
+        'get_files' => [
+            'file' => '/includes/extensions/autocomplete/helpers/get_files.php',
+            'status' => true
+        ],
+        'get_json_file' => [
+            'file' => '/includes/extensions/autocomplete/helpers/get_json_file.php',
+            'status' => true
+        ],
         // Add more helpers as needed
     ],
     'frameworks' => [
         'picostrap' => [
             'file' => '/includes/extensions/autocomplete/frameworks/picostrap/autocomplete.php',
-            'status' => true
+            'status' => false // Set to true to enable if Picostrap is active
+        ],
+        'custom' => [
+            'file' => '/includes/extensions/autocomplete/frameworks/custom/autocomplete.php',
+            'status' => true 
+        ],
+        'winden_v1' => [
+            'file' => '/includes/extensions/autocomplete/frameworks/winden_v1/autocomplete.php',
+            'status' => true // Set to true to enable if Winden is active
         ],
         // Add more frameworks as needed, see Core Framework example or Picostrap to extend into another.
     ]

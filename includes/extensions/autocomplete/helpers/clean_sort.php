@@ -6,7 +6,7 @@
  * @param string $css_contents The CSS content to process.
  * @return array An array of cleaned and sorted class names and CSS variables.
  */
-function lc_clean_and_sort_css($css_contents) {
+function pico_clean_and_sort_css($css_contents) {
     // Remove CSS comment blocks.
     // This regex pattern looks for /* followed by any character repeated any number of times, ending with */
     $css_contents = preg_replace('/\/\*.*?\*\//s', '', $css_contents);

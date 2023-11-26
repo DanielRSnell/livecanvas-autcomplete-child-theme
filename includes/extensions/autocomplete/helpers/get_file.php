@@ -1,13 +1,13 @@
 <?php
 
-function get_cleaned_and_formatted_data($file_path, $meta) {
+function pico_get_css_file($file_path, $meta) {
     // Check if the file exists at the given path
     if (file_exists($file_path)) {
         // Get the contents of the file
         $file_contents = file_get_contents($file_path);
 
         // Clean and sort the data from the file
-        $cleaned_data = lc_clean_and_sort_css($file_contents);
+        $cleaned_data = pico_clean_and_sort_css($file_contents);
 
         // Format the cleaned data and return it
         return array_map(function ($item) use ($meta) {

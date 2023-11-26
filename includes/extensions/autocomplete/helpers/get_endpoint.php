@@ -1,6 +1,6 @@
 <?php
 
-function get_pico_completions($endpoint_url, $meta) {
+function pico_get_formatted_endpoint($endpoint_url, $meta) {
     // Perform a safe HTTP GET request to the specified endpoint URL
     $response = wp_safe_remote_get($endpoint_url);
 

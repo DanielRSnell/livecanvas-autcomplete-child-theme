@@ -52,7 +52,7 @@ function lc_extract_and_respond_pico_classnames() {
         $css_contents = file_get_contents($css_file_path);
 
         // Clean and sort the CSS class names.
-        $cleaned_classnames = lc_clean_and_sort_css($css_contents);
+        $cleaned_classnames = pico_clean_and_sort_css($css_contents);
 
         // Return the cleaned and sorted class names.
         return $cleaned_classnames;

@@ -1,6 +1,6 @@
 <?php 
 
-function get_cleaned_and_formatted_data_from_glob($directory_path, $file_pattern, $meta) {
+function pico_get_css_files($directory_path, $file_pattern, $meta) {
     $css_files = glob($directory_path . '/' . $file_pattern);
 
     if (!empty($css_files)) {
@@ -12,7 +12,7 @@ function get_cleaned_and_formatted_data_from_glob($directory_path, $file_pattern
         }
 
         // Clean and sort the merged contents
-        $cleaned_data = lc_clean_and_sort_css($merged_css_contents);
+        $cleaned_data = pico_clean_and_sort_css($merged_css_contents);
 
         // Format and return the cleaned data
         return array_map(function ($item) use ($meta) {

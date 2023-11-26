@@ -1,0 +1,21 @@
+{
+    "name": "danielsnell/picostrap5-child-base",
+    "require": {
+        "timber/timber": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Danielsnell\\Picostrap5ChildBase\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Daniel Snell"
+        }
+    ],
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true
+        }
+    }
+}
