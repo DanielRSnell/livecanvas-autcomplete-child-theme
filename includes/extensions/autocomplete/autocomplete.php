@@ -36,6 +36,14 @@ $extend_autocomplete = [
             'file' => '/includes/extensions/autocomplete/frameworks/winden_v1/autocomplete.php',
             'status' => false // Set to true to enable if Winden is active
         ],
+        'acss' => [
+            'file' => '/includes/extensions/autocomplete/frameworks/acss/autocomplete.php',
+            'status' => false // Set to true to enable if ACSS is active
+        ],
+        'livecanvas:section:shortcode' => [
+            'file' => '/includes/extensions/autocomplete/frameworks/livecanvas/get_section/shortcode.php',
+            'status' => true
+        ],
         // Add more frameworks as needed, see Core Framework example or Picostrap to extend into another.
     ]
 ];
