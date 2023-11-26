@@ -22,8 +22,7 @@ function timber_singular_shortcode($atts, $content = null) {
     // Initialize Timber context and assign the current post to it.
     $context = Timber::context();
 
-    $context['page'] = Timber::get_post( $post->ID );
-    $context['test'] = $post->ID;
+    $context['post'] = Timber::get_post( $post->ID );
 
 
     // Include shortcode attributes in the Timber context.
@@ -31,8 +30,10 @@ function timber_singular_shortcode($atts, $content = null) {
         $context['attribute'][$key] = $value;
     }
 
+    $prepare = do_shortcode($content);
+
     // Compile the content using Timber and return.
-    return Timber::compile_string($content, $context);
+    return Timber::compile_string($prepare, $context);
 }
 
 // Register the shortcode in WordPress.
