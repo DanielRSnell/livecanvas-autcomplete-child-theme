@@ -18,7 +18,7 @@ $extensions = [
     ],
     'timber' => [ // make sure to run composer install in the theme directory to install Timber
         'file' => 'timber/timber.php',
-        'status' => true
+        'status' => false
     ]
 
     // Add more extensions as needed.

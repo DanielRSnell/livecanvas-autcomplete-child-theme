@@ -54,3 +54,40 @@ function add_winden_v1_completions($completions, $file_path = '/uploads/winden/c
 
 // Attach the function to the 'lc_modify_completions' filter
 add_filter('lc_modify_completions', 'add_winden_v1_completions');
+
+/**
+ * Appends content from selected post types to a given string.
+ * 
+ * This function enhances the 'Winden Worker' optimization by adding content
+ * from various post types, including custom and default ones, to the existing
+ * content string. It queries for posts, pages, and custom post types defined
+ * within the context and appends their content if available.
+ *
+ * @param string $content The initial content string to which additional content will be appended.
+ * @return string Updated content string with appended post contents.
+ */
+add_filter('f!winden/core/worker:compile_content_payload', 'artisan_views_append_content_payload', 10);
+
+function livecanvas_views_append_content_payload($content) {
+    // Define an array of post types to include in the query.
+    $post_types = [
+        'lc_partial', 'lc_section', 'lc_block',
+        'lc_dynamic_template', 'page', 'post' // Add additional post types here.
+    ];
+
+    // Create a new WP_Query instance to retrieve posts of specified types.
+    $query = new WP_Query([
+        'posts_per_page' => -1, // Retrieve all available posts.
+        'post_type'      => $post_types
+    ]);
+
+    // Iterate over the retrieved posts and append their content.
+    foreach ($query->posts as $post) {
+        if (!empty(trim($post->post_content))) {
+            $content .= $post->post_content;
+        }
+    }
+
+    // Return the concatenated string with appended post contents.
+    return $content;
+}
