@@ -30,7 +30,7 @@ $extend_autocomplete = [
         ],
         'custom' => [
             'file' => '/includes/extensions/autocomplete/frameworks/custom/autocomplete.php',
-            'status' => true 
+            'status' => false 
         ],
         'winden_v1' => [
             'file' => '/includes/extensions/autocomplete/frameworks/winden_v1/autocomplete.php',

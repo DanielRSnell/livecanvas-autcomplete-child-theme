@@ -34,6 +34,8 @@ function add_acss_completions_to_array($completions) {
     }
 }
 
+add_filter('lc_modify_completions', 'add_acss_completions_to_array');
+
 
 /**
  * Extracts and responds with ACSS (Automatic CSS) class names.

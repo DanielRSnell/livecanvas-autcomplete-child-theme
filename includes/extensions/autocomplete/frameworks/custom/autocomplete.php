@@ -68,11 +68,42 @@ function add_theme_completions($completions) {
     $endpoint_url_multiple = site_url() . '/wp-json/livecanvas/v1/autocomplete/op/multiple';
 
     // Fetch completions from both endpoints and merge them
-    $fetch_completions_single = get_theme_completions($endpoint_url_single);
-    $fetch_completions_multiple = get_theme_completions($endpoint_url_multiple);
+    $fetch_completions_single = get_theme_completions($endpoint_url_single, 'Open Props');
+    $fetch_completions_multiple = get_theme_completions($endpoint_url_multiple, 'OP Bundle');
     
     $merged_completions = array_merge($completions, $fetch_completions_single, $fetch_completions_multiple);
     return $merged_completions;
 }
 
 add_filter('lc_modify_completions', 'add_theme_completions');
+
+
+/**
+ * Retrieves theme completion options from a REST API endpoint and formats them with custom meta.
+ *
+ * @param string $endpoint_url The URL of the REST API endpoint.
+ * @param string $meta The meta information to be included with each completion option.
+ * @return array The formatted completion options.
+ */
+function get_theme_completions($endpoint_url, $meta) {
+    $response = wp_safe_remote_get($endpoint_url);
+
+    if (is_wp_error($response)) {
+        return [];
+    }
+
+    $body = wp_remote_retrieve_body($response);
+    $parsed_data = json_decode($body, true);
+
+    if (!is_array($parsed_data)) {
+        return [];
+    }
+
+    return array_map(function ($item) use ($meta) {
+        return [
+            'caption' => $item,
+            'value'   => $item,
+            'meta'    => $meta,
+        ];
+    }, $parsed_data);
+}
