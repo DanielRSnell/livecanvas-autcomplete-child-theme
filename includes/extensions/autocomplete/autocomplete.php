@@ -26,7 +26,7 @@ $extend_autocomplete = [
     'frameworks' => [
         'picostrap' => [
             'file' => '/includes/extensions/autocomplete/frameworks/picostrap/autocomplete.php',
-            'status' => true // Set to true to enable if Picostrap is active
+            'status' => false // Set to true to enable if Picostrap is active
         ],
         'custom' => [
             'file' => '/includes/extensions/autocomplete/frameworks/custom/autocomplete.php',
