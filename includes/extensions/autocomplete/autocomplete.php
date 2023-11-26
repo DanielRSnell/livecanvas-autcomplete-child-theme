@@ -34,7 +34,7 @@ $extend_autocomplete = [
         ],
         'winden_v1' => [
             'file' => '/includes/extensions/autocomplete/frameworks/winden_v1/autocomplete.php',
-            'status' => true // Set to true to enable if Winden is active
+            'status' => false // Set to true to enable if Winden is active
         ],
         // Add more frameworks as needed, see Core Framework example or Picostrap to extend into another.
     ]
