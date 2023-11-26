@@ -26,7 +26,7 @@ $extend_autocomplete = [
     'frameworks' => [
         'picostrap' => [
             'file' => '/includes/extensions/autocomplete/frameworks/picostrap/autocomplete.php',
-            'status' => false // Set to true to enable if Picostrap is active
+            'status' => true // Set to true to enable if Picostrap is active
         ],
         'custom' => [
             'file' => '/includes/extensions/autocomplete/frameworks/custom/autocomplete.php',
@@ -41,7 +41,7 @@ $extend_autocomplete = [
             'status' => false // Set to true to enable if ACSS is active
         ],
         'livecanvas:section:shortcode' => [
-            'file' => '/includes/extensions/autocomplete/frameworks/livecanvas/get_section/shortcode.php',
+            'file' => '/includes/extensions/autocomplete/frameworks/livecanvas/get_section/markup.php',
             'status' => true
         ],
         // Add more frameworks as needed, see Core Framework example or Picostrap to extend into another.
