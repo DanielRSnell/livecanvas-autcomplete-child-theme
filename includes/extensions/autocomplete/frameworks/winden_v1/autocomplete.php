@@ -69,7 +69,7 @@ add_filter('lc_modify_completions', 'add_winden_v1_completions');
  */
 add_filter('f!winden/core/worker:compile_content_payload', 'artisan_views_append_content_payload', 10);
 
-function artisan_views_append_content_payload($content) {
+function livecanvas_views_append_content_payload($content) {
     // Define an array of post types to include in the query.
     $post_types = [
         'lc_partial', 'lc_section', 'lc_block',
