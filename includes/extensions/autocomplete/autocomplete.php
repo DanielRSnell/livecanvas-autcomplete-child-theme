@@ -26,7 +26,7 @@ $extend_autocomplete = [
     'frameworks' => [
         'picostrap' => [
             'file' => '/includes/extensions/autocomplete/frameworks/picostrap/autocomplete.php',
-            'status' => true // Set to true to enable if Picostrap is active
+            'status' => false // Set to true to enable if Picostrap is active
         ],
         'custom' => [
             'file' => '/includes/extensions/autocomplete/frameworks/custom/autocomplete.php',
@@ -40,7 +40,7 @@ $extend_autocomplete = [
             'file' => '/includes/extensions/autocomplete/frameworks/acss/autocomplete.php',
             'status' => false // Set to true to enable if ACSS is active
         ],
-        'livecanvas:section:shortcode' => [
+        'livecanvas:section:file' => [
             'file' => '/includes/extensions/autocomplete/frameworks/livecanvas/get_section/markup.php',
             'status' => true
         ],

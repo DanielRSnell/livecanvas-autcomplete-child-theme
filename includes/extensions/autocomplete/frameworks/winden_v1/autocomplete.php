@@ -66,7 +66,7 @@ add_filter('lc_modify_completions', 'add_winden_v1_completions');
  * @param string $content The initial content string to which additional content will be appended.
  * @return string Updated content string with appended post contents.
  */
-add_filter('f!winden/core/worker:compile_content_payload', 'artisan_views_append_content_payload', 10);
+add_filter('f!winden/core/worker:compile_content_payload', 'livecanvas_views_append_content_payload', 10);
 
 function livecanvas_views_append_content_payload($content) {
     // Define an array of post types to include in the query.
